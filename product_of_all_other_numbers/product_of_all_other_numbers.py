@@ -2,11 +2,29 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+# multiply all values except current index value
+# assign product to the current index
+
 def product_of_all_other_numbers(arr):
-    # Your code here
+    # create products list matching length of input list
+    products = [0] * len(arr)
+    # store ending index
+    end = len(arr) - 1
+    # iterate over list
+    for i in range(len(arr)):
+        ## create starting product variable
+        ## create pointer starting at 0 index
+        product, pointer = 1, 0
+        ## multiply entire list, while excluding current index
+        while pointer <= end:
+            if pointer != i:
+                product *= arr[pointer]
+            pointer += 1
+        ## add product to products list at current index
+        products[i] = product
 
-    pass
-
+    # return products list
+    return products
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
