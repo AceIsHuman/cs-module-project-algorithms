@@ -7,7 +7,7 @@ def single_number(arr):
     for i in range(len(arr)):
         if arr[i] is None:
             # skip is arr[i] is has already been checked
-            pass
+            continue
         try:
             # save current value
             val = arr[i]
